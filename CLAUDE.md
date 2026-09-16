@@ -6,8 +6,23 @@ con todo el CSS y el JS embebidos, más `assets/`.
 
 ## Stack
 
-HTML + CSS + JS vanilla. Fuentes de Google (Orbitron, Inter, JetBrains Mono).
-Animaciones y cursor custom hechos a mano. Deploy en Vercel (sitio estático).
+HTML + CSS + JS vanilla, sin dependencias. Deploy en Vercel (sitio estático).
+
+## Diseño
+
+Minimalismo editorial: fondo hueso, monocromo cálido, una sola familia de
+acentos en pasteles lavados (uno por categoría de proyecto). Nada de gradientes
+llamativos, neón, sombras marcadas ni cursores custom.
+
+- **Tipografía**: Instrument Serif para los títulos (con itálica como único
+  énfasis), Geist para el cuerpo, Geist Mono para metadatos y rótulos.
+- **Color**: todo sale de las variables de `:root`. Los grises `--muted` y
+  `--faint` están calibrados a 6.0:1 y 4.8:1 sobre el fondo — si se aclaran, la
+  tipografía chica deja de pasar WCAG AA.
+- **Bordes y radios**: `1px solid var(--line)`, radio 10px en tarjetas y 6px en
+  botones. Las sombras solo aparecen en hover y apenas se ven.
+- **Movimiento**: entrada por scroll con IntersectionObserver (fade + 12px),
+  escalonada con `--i` en cada elemento. Todo respeta `prefers-reduced-motion`.
 
 ## Cómo se levanta
 
@@ -25,8 +40,14 @@ directory `.`.
 
 ## Proyectos de la grilla
 
-Cada tarjeta es un `<a class="card">` dentro de `#projects`, con `data-cat` para
-el filtro. El link va al sitio en producción del proyecto, en pestaña nueva.
+Cada tarjeta vive en `#projects` con su `data-cat`. Si el proyecto está
+publicado es un `<a class="card">` que abre el sitio en pestaña nueva y cierra
+con `<span class="go">`; si todavía no, es un `<div class="card">` que cierra
+con `<span class="soon">` y no enlaza a ningún lado.
+
+Los filtros y sus contadores se generan por JS a partir de las tarjetas, así
+que agregar una no obliga a tocar nada más. Lo único manual es el número de
+orden (`<span class="idx">`).
 
 | Tarjeta | Link |
 |---|---|
@@ -42,5 +63,8 @@ el filtro. El link va al sitio en producción del proyecto, en pestaña nueva.
 | Dra. Lucia Nosetti | https://dermatologalucianosetti.vercel.app |
 | Divisor de Gastos | pendiente (falta deploy y cuentas por usuario) |
 
-Al contar tarjetas, actualizar también los números de los filtros (`.count`) y
-el `P_0x` de cada tarjeta.
+Canchita, BiVi y Dra. Lucia Nosetti aparecen además en «Seleccionados», el
+bloque del hero. Esa lista está escrita a mano: si cambia, se edita ahí.
+
+El botón de LinkedIn de la sección Contacto está comentado hasta tener la URL
+real del perfil.
