@@ -66,5 +66,6 @@ orden (`<span class="idx">`).
 Canchita, BiVi y Dra. Lucia Nosetti aparecen además en «Seleccionados», el
 bloque del hero. Esa lista está escrita a mano: si cambia, se edita ahí.
 
-El botón de LinkedIn de la sección Contacto está comentado hasta tener la URL
-real del perfil.
+La sección Contacto tiene botones a email (rodrigolazaroff@gmail.com),
+WhatsApp (+543777659236, con mensaje precargado), Instagram
+(@rodrigolazaroff) y LinkedIn (in/rodrigolazaroff).
